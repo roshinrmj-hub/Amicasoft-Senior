@@ -39,38 +39,38 @@
         .user-profile { display: flex; align-items: center; gap: 10px; background: #f0f4f8; padding: 5px 15px; border-radius: 30px; }
 
         /* --- CONTAINER --- */
-        .main-container { max-width: 900px; margin: 0 auto; padding: 20px; text-align: center; }
+        .main-container { max-width: 900px; margin: 0 auto; padding: 15px; text-align: center; }
         
-        /* CLASS NAV */
-        .class-nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        /* CLASS NAV - Reduced Gap */
+        .class-nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
         .class-btn {
-            background: #eee; border: none; padding: 10px 20px; border-radius: 25px;
-            cursor: pointer; font-size: 1rem; font-weight: bold; color: #555;
+            background: #eee; border: none; padding: 8px 18px; border-radius: 25px;
+            cursor: pointer; font-size: 0.95rem; font-weight: bold; color: #555;
             transition: all 0.2s;
         }
         .class-btn:hover { background: #ddd; transform: translateY(-2px); }
         .class-btn.active { background: var(--dark); color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-        /* TOPIC NAV */
-        .topic-nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
+        /* TOPIC NAV - Reduced Gap */
+        .topic-nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
         .topic-btn {
             background: white; border: 2px solid var(--secondary); color: var(--secondary);
-            padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 5px;
+            padding: 6px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem;
         }
         .topic-btn.active { background: var(--secondary); color: white; }
 
-        /* --- HEADLINE AREA --- */
-        .headline-area { margin-bottom: 20px; animation: fadeIn 0.5s ease-out;}
-        .problem-title { font-size: 2rem; color: var(--dark); margin: 0 0 10px 0; }
+        /* --- HEADLINE AREA - Minimal Gap --- */
+        .headline-area { margin-bottom: 10px; margin-top: -5px; animation: fadeIn 0.5s ease-out;}
+        .problem-title { font-size: 1.8rem; color: var(--dark); margin: 0 0 5px 0; }
         .problem-desc { 
-            font-size: 1.1rem; color: #555; font-style: italic; 
-            background: #eef2f5; display: inline-block; padding: 8px 20px; 
+            font-size: 1rem; color: #555; font-style: italic; 
+            background: #eef2f5; display: inline-block; padding: 5px 15px; 
             border-radius: 20px; border: 1px solid #dee2e6;
         }
 
         /* --- WORKSPACE --- */
         .workspace {
-            background: white; border-radius: 20px; padding: 40px;
+            background: white; border-radius: 20px; padding: 30px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.05);
             border-top: 6px solid var(--primary);
             min-height: 400px; position: relative;
@@ -79,14 +79,14 @@
         
         /* Real World Context Box */
         .real-world-box {
-            background: #e3f2fd; color: #0d47a1; padding: 15px; border-radius: 8px;
-            margin: 0 auto 25px auto; max-width: 90%; font-size: 1rem; border: 1px dashed #2196f3;
+            background: #e3f2fd; color: #0d47a1; padding: 12px; border-radius: 8px;
+            margin: 0 auto 20px auto; max-width: 90%; font-size: 0.95rem; border: 1px dashed #2196f3;
             display: none; text-align: left;
         }
 
         .math-display {
             font-size: 2rem; font-family: 'Times New Roman', serif;
-            margin: 20px 0; color: #333; font-weight: bold; line-height: 1.4;
+            margin: 15px 0; color: #333; font-weight: bold; line-height: 1.4;
             display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;
         }
 
@@ -97,16 +97,17 @@
         .frac-top { border-bottom: 3px solid #333; padding-bottom: 2px; width: 100%; text-align: center; }
         .frac-bot { padding-top: 2px; width: 100%; text-align: center; }
 
-        .input-area { margin: 30px 0; display: flex; justify-content: center; gap: 10px; align-items: center;}
+        .input-area { margin: 25px 0; display: flex; justify-content: center; gap: 10px; align-items: center;}
+        
         .math-input {
-            padding: 12px; width: 160px; text-align: center; font-size: 1.3rem;
+            padding: 10px; width: 220px; text-align: center; font-size: 1.2rem;
             border: 2px solid #ddd; border-radius: 10px; outline: none;
         }
         .math-input:focus { border-color: var(--primary); }
 
         .action-btn {
-            padding: 12px 25px; border: none; border-radius: 10px;
-            font-size: 1rem; font-weight: bold; cursor: pointer; color: white;
+            padding: 10px 22px; border: none; border-radius: 10px;
+            font-size: 0.95rem; font-weight: bold; cursor: pointer; color: white;
             transition: transform 0.1s;
         }
         .btn-check { background: var(--secondary); box-shadow: 0 4px 0 #3aa8a0; }
@@ -116,29 +117,29 @@
         .btn-new:active { transform: translateY(4px); box-shadow: none; }
 
         .btn-steps {
-            display: block; margin: 30px auto 0 auto;
+            display: block; margin: 25px auto 0 auto;
             background: transparent; color: #777; border: 2px solid #ccc;
-            padding: 10px 25px; border-radius: 25px; cursor: pointer; font-weight: 600;
+            padding: 8px 20px; border-radius: 25px; cursor: pointer; font-weight: 600;
         }
         .btn-steps:hover { border-color: var(--dark); color: var(--dark); background: #f9f9f9;}
 
         /* --- FEEDBACK & STEPS --- */
-        .feedback { font-size: 1.4rem; font-weight: bold; margin-top: 20px; height: 30px; }
+        .feedback { font-size: 1.3rem; font-weight: bold; margin-top: 15px; height: 30px; }
         .correct { color: #27ae60; } .wrong { color: var(--primary); }
 
         .step-container {
-            margin-top: 30px; text-align: left; background: #f8f9fa;
-            padding: 25px; border-radius: 15px; border-left: 5px solid var(--secondary);
+            margin-top: 25px; text-align: left; background: #f8f9fa;
+            padding: 20px; border-radius: 15px; border-left: 5px solid var(--secondary);
             display: none; animation: slideDown 0.3s ease-out;
         }
-        .step-title { font-weight: bold; color: var(--dark); margin-bottom: 15px; font-size: 1.2rem; border-bottom: 1px solid #ddd; padding-bottom: 5px;}
-        .step-line { margin-bottom: 10px; font-family: 'Segoe UI', sans-serif; font-size: 1.05rem; color: #444; line-height: 1.6; }
+        .step-title { font-weight: bold; color: var(--dark); margin-bottom: 10px; font-size: 1.1rem; border-bottom: 1px solid #ddd; padding-bottom: 5px;}
+        .step-line { margin-bottom: 8px; font-family: 'Segoe UI', sans-serif; font-size: 1rem; color: #444; line-height: 1.5; }
         .step-line b { color: var(--dark); }
         
         /* FORMULA BOX */
         .formula-box {
-            background: #2c3e50; color: #fff; padding: 15px; border-radius: 8px;
-            margin-bottom: 20px; font-family: 'Courier New', monospace; font-size: 1.15rem;
+            background: #2c3e50; color: #fff; padding: 12px; border-radius: 8px;
+            margin-bottom: 15px; font-family: 'Courier New', monospace; font-size: 1.1rem;
             text-align: center; border: 2px solid var(--accent);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
@@ -146,7 +147,7 @@
         .group-box { border: 2px dashed #999; padding: 2px 5px; margin: 0 2px; border-radius: 4px; background: #e0e0e0; display: inline-block; }
 
         /* VISUAL */
-        .diagram-stage { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+        .diagram-stage { height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -163,7 +164,7 @@
         </div>
     </nav>
 
-    <div class="main-container">
+    <div class="main-container" id="main-cont">
         <div class="class-nav">
             <button class="class-btn active" onclick="app.loadClass(8)">Class 8</button>
             <button class="class-btn" onclick="app.loadClass(9)">Class 9</button>
@@ -185,7 +186,7 @@
             <div class="math-display" id="p-equation"></div>
 
             <div class="input-area">
-                <input type="number" id="user-input" class="math-input" placeholder="Answer = ?" step="0.01">
+                <input type="text" id="user-input" class="math-input" placeholder="Answer = ?" autocomplete="off">
                 <button class="action-btn btn-check" onclick="app.checkAnswer()">Check</button>
                 <button class="action-btn btn-new" onclick="app.newProblem()">New Question</button>
             </div>
@@ -239,6 +240,9 @@
                 this.currentClass = cls;
                 document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
                 event.target.classList.add('active');
+                
+                // --- TIGHT LAYOUT REMOVED (Applied Globally via CSS) ---
+                
                 const topicContainer = document.getElementById('topic-container');
                 topicContainer.innerHTML = '';
                 const topics = this.curriculum[cls] || [];
@@ -268,6 +272,7 @@
                 document.getElementById('step-box').style.display = 'none';
                 document.getElementById('diagram-area').innerHTML = '';
                 document.getElementById('real-world-ctx').style.display = 'none'; 
+                document.getElementById('user-input').placeholder = "Answer = ?";
 
                 if (this.currentTopic && generators[this.currentTopic.handler]) {
                     this.currentData = generators[this.currentTopic.handler]();
@@ -283,16 +288,40 @@
                         box.style.display = 'block';
                         box.innerHTML = this.currentData.realWorld;
                     }
+
+                    if(this.currentData.placeholder) {
+                        document.getElementById('user-input').placeholder = this.currentData.placeholder;
+                    }
                 }
             },
 
             checkAnswer: function() {
-                const userVal = parseFloat(document.getElementById('user-input').value);
-                const correctVal = parseFloat(this.currentData.answer);
+                const userRaw = document.getElementById('user-input').value.trim();
                 const feedback = document.getElementById('feedback-display');
+                let isCorrect = false;
+
+                // Handle Multiple Answers (Comma Separated) if answer is array
+                if (Array.isArray(this.currentData.answer)) {
+                    // Expecting string like "2, 3"
+                    const userParts = userRaw.split(',').map(s => parseFloat(s.trim())).sort((a,b)=>a-b);
+                    const correctParts = this.currentData.answer.sort((a,b)=>a-b);
+                    
+                    if(userParts.length === correctParts.length) {
+                        // Check fuzzy match for each
+                        let allMatch = true;
+                        for(let i=0; i<userParts.length; i++) {
+                            if(Math.abs(userParts[i] - correctParts[i]) > 0.25 || isNaN(userParts[i])) allMatch = false;
+                        }
+                        isCorrect = allMatch;
+                    }
+                } else {
+                    // Standard Single Answer
+                    const userVal = parseFloat(userRaw);
+                    const correctVal = parseFloat(this.currentData.answer);
+                    if(Math.abs(userVal - correctVal) < 0.25) isCorrect = true;
+                }
                 
-                // Allow small margin for error
-                if(Math.abs(userVal - correctVal) < 0.25) {
+                if(isCorrect) {
                     feedback.innerText = "Correct! Great Job! 🎉";
                     feedback.className = "feedback correct";
                 } else {
@@ -320,39 +349,39 @@
 
         /* --- CONTENT GENERATORS --- */
         const generators = {
-            
-            // Utility for generating random integers
-            randInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
-            
+
             // ================= CLASS 8 =================
             generateRootsManual: function() {
                 const type = Math.random() > 0.5 ? 'square' : 'cube';
-                let base, val, sym, factors = [], groupedStr;
+                let base, val, sym, factors = [], groupedStr, ctxStr;
                 
                 if(type === 'square') {
                     const primes = [2, 3, 5];
-                    const p1 = primes[this.randInt(0, 1)]; // 2 or 3
-                    const p2 = primes[this.randInt(0, 2)]; // 2, 3, or 5
+                    const p1 = primes[Math.floor(Math.random()*2)];
+                    const p2 = primes[Math.floor(Math.random()*3)];
                     base = p1 * p2;
                     val = base * base;
                     sym = '√';
                     factors = [p1, p1, p2, p2].sort((a,b)=>a-b);
                     groupedStr = `<span class="group-box">${factors[0]}×${factors[1]}</span> × <span class="group-box">${factors[2]}×${factors[3]}</span>`;
+                    ctxStr = `🌍 <b>Visualize:</b> A square garden has an area of <b>${val} m²</b>. Picturize the garden. What is the length of one side?`;
                 } else {
-                    base = this.randInt(2, 5); 
+                    base = Math.floor(Math.random()*4)+2; 
                     val = base*base*base;
                     sym = '∛';
                     groupedStr = `<span class="group-box">${base}×${base}×${base}</span>`;
+                    ctxStr = `🌍 <b>Visualize:</b> A large cubic water tank holds <b>${val} liters</b> of water. Picturize the cube. What is the length of one edge?`;
                 }
 
                 return {
                     answer: base,
-                    desc: `Find the ${type} root using factorization.`,
+                    desc: `Find the ${type} root.`,
+                    realWorld: ctxStr,
                     display: `${sym}${val} = ?`,
-                    formula: type==='square' ? "Pair Factors: (a×a) → a" : "Group Triplets: (a×a×a) → a",
+                    formula: type==='square' ? "Side = √Area" : "Edge = ∛Volume",
                     steps: [
-                        `1. Find factors of ${val}.`,
-                        `2. Group them: ${groupedStr}`,
+                        `1. We need to find the number that multiplies by itself to get ${val}.`,
+                        `2. Prime Factors: ${groupedStr}`,
                         `3. Pick one from each group.`,
                         type === 'square' ? `4. Result: ${factors[0]} × ${factors[2]} = <b>${base}</b>` : `4. Result: <b>${base}</b>`
                     ]
@@ -360,44 +389,63 @@
             },
 
             generateExponentsFrac: function() {
-                const base = this.randInt(2, 5);
+                const base = Math.floor(Math.random() * 4) + 2;
                 const mode = Math.random() > 0.5 ? 'mult' : 'div';
                 
                 if (mode === 'mult') {
-                    const m = this.randInt(2, 6);
-                    const n = this.randInt(2, 6);
+                    // Logic: Keep powers close (same level)
+                    const m = Math.floor(Math.random() * 5) + 2; 
+                    const n = m + (Math.random() > 0.5 ? 1 : 0); // n is m or m+1
                     const ans = m + n;
                     return {
                         answer: ans,
-                        desc: "Solve for x using the Product Rule (Multiplication).",
+                        desc: "Solve for x using the Product Rule.",
                         display: `${base}<sup>${m}</sup> × ${base}<sup>${n}</sup> = ${base}<sup>x</sup>`,
                         formula: "a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup>",
-                        steps: [`1. Base is ${base}.`, `2. Add exponents: ${m} + ${n}`, `3. x = <b>${ans}</b>`]
+                        steps: [`1. Base is ${base}.`, `2. Since we multiply same bases, ADD exponents.`, `3. ${m} + ${n} = ${ans}`, `4. x = <b>${ans}</b>`]
                     };
                 } else {
-                    const m = this.randInt(4, 8);
-                    const n = this.randInt(1, 3);
+                    const n = Math.floor(Math.random() * 3) + 2;
+                    const m = n + Math.floor(Math.random() * 2) + 2; // m is slightly larger
                     const ans = m - n;
                     return {
                         answer: ans,
-                        desc: "Solve for x using the Quotient Rule (Division).",
+                        desc: "Solve for x using the Quotient Rule.",
                         display: `<div class="frac"><div class="frac-top">${base}<sup>${m}</sup></div><div class="frac-bot">${base}<sup>${n}</sup></div></div><span> = ${base}<sup>x</sup></span>`,
                         formula: "a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m-n</sup>",
-                        steps: [`1. Base is ${base}.`, `2. Subtract exponents: ${m} - ${n}`, `3. x = <b>${ans}</b>`]
+                        steps: [`1. Base is ${base}.`, `2. Since we divide same bases, SUBTRACT exponents.`, `3. ${m} - ${n} = ${ans}`, `4. x = <b>${ans}</b>`]
                     };
                 }
             },
 
             generateVolume: function() {
                 const shapes = ['cylinder', 'cone', 'sphere'];
-                const type = shapes[this.randInt(0, shapes.length - 1)];
-                const r = this.randInt(2, 5);
-                const h = this.randInt(3, 8);
-                let ans, displayHTML, formulaStr, stepsArr, svgHTML, descStr;
+                const type = shapes[Math.floor(Math.random() * shapes.length)];
+                const r = Math.floor(Math.random() * 4) + 2;
+                const h = Math.floor(Math.random() * 6) + 3;
+                let ans, displayHTML, formulaStr, stepsArr, svgHTML, descStr, scenarioStr;
+
+                // Unique scenarios for each generation
+                const scCyl = [
+                    `A cylindrical water tank has radius ${r}m and height ${h}m. How much water can it hold?`,
+                    `A pillar is shaped like a cylinder with r=${r}m and h=${h}m. Find its concrete volume.`,
+                    `A soda can (cylinder) has dimensions r=${r}, h=${h}. Calculate the liquid volume.`
+                ];
+                const scCone = [
+                    `An ice-cream cone has radius ${r}cm and height ${h}cm. How much ice-cream fills it?`,
+                    `A heap of sand is in the shape of a cone (r=${r}, h=${h}). Find the volume of sand.`,
+                    `A party hat is conical with r=${r}, h=${h}. What is the air capacity inside?`
+                ];
+                const scSphere = [
+                    `A football has a radius of ${r}cm. How much air does it contain?`,
+                    `A spherical water balloon has radius ${r}cm. Find the water volume.`,
+                    `A steel ball bearing has radius ${r}mm. What is the volume of steel used?`
+                ];
 
                 if (type === 'cylinder') {
                     ans = (Math.PI*r*r*h).toFixed(2);
                     descStr = "Find Volume of Cylinder.";
+                    scenarioStr = scCyl[Math.floor(Math.random()*scCyl.length)];
                     displayHTML = `r = ${r}, h = ${h}`;
                     formulaStr = "Volume = πr²h";
                     stepsArr = [`1. r² = ${r*r}`, `2. 3.14 × ${r*r} × ${h}`, `3. = <b>${ans}</b>`];
@@ -405,6 +453,7 @@
                 } else if (type === 'cone') {
                     ans = ((1/3)*Math.PI*r*r*h).toFixed(2);
                     descStr = "Find Volume of Cone.";
+                    scenarioStr = scCone[Math.floor(Math.random()*scCone.length)];
                     displayHTML = `r = ${r}, h = ${h}`;
                     formulaStr = "Volume = ⅓πr²h";
                     stepsArr = [`1. r² = ${r*r}`, `2. (3.14 × ${r*r} × ${h}) / 3`, `3. = <b>${ans}</b>`];
@@ -412,47 +461,73 @@
                 } else {
                     ans = ((4/3)*Math.PI*Math.pow(r,3)).toFixed(2);
                     descStr = "Find Volume of Sphere.";
+                    scenarioStr = scSphere[Math.floor(Math.random()*scSphere.length)];
                     displayHTML = `r = ${r}`;
                     formulaStr = "Volume = ⁴⁄₃πr³";
                     stepsArr = [`1. r³ = ${r*r*r}`, `2. (4 × 3.14 × ${r*r*r}) / 3`, `3. = <b>${ans}</b>`];
                     svgHTML = `<svg width="100" height="120"><circle cx="50" cy="60" r="40" fill="#f0f0f0" stroke="#333"/><path d="M 10 60 Q 50 100 90 60" fill="none" stroke="#ccc"/><path d="M 10 60 Q 50 20 90 60" fill="none" stroke="#ccc" stroke-dasharray="4"/><line x1="50" y1="60" x2="90" y2="60" stroke="red"/><text x="60" y="55" font-size="12">r=${r}</text></svg>`;
                 }
 
-                return { answer: ans, desc: descStr, display: displayHTML, formula: formulaStr, steps: stepsArr, svg: svgHTML };
+                return { answer: ans, desc: descStr, display: displayHTML, formula: formulaStr, steps: stepsArr, svg: svgHTML, realWorld: `🌍 <b>Scenario:</b> ${scenarioStr}` };
             },
             
             generateLinear: function() {
-                const x = this.randInt(1, 10);
-                const a = this.randInt(2, 6);
-                const b = this.randInt(1, 10);
+                const x = Math.floor(Math.random()*10)+1;
+                const a = Math.floor(Math.random()*5)+2;
+                const b = Math.floor(Math.random()*10)+1;
                 return {
                     answer: x,
                     desc: "Solve for x.",
                     display: `${a}x + ${b} = ${a*x + b}`,
                     formula: "ax + b = c → x = (c - b)/a",
-                    steps: [`1. Move constant ${b} to right: ${a}x = ${(a*x+b)} - ${b}`, `2. ${a}x = ${a*x}`, `3. Divide by ${a}: x = <b>${x}</b>`]
+                    steps: [`1. Move constant ${b} to right: ${a}x = ${(a*x+b)} - ${b}`, `2. ${a}x = ${a*x}`, `3. Divide by ${a}: x = ${x}`]
                 };
             },
 
             generateQuadFormula8: function() {
-                const r1 = this.randInt(1, 4); 
-                const r2 = this.randInt(1, 4);
+                // Class 8 Intro to Quad - Randomly ask for solutions
+                const r1 = Math.floor(Math.random() * 5) + 1; 
+                const r2 = Math.floor(Math.random() * 5) + 2; // distinct
                 const bVal = -(r1 + r2);
                 const cVal = r1 * r2;
-                const ans = Math.max(r1, r2);
+                
+                const mode = Math.random(); // Randomly choose what to ask
+                let askType, finalAns, placeholderText;
+
+                if (mode < 0.33) {
+                    askType = "Find the <b>Smaller</b> root.";
+                    finalAns = Math.min(r1, r2);
+                    placeholderText = "Smaller value";
+                } else if (mode < 0.66) {
+                    askType = "Find the <b>Larger</b> root.";
+                    finalAns = Math.max(r1, r2);
+                    placeholderText = "Larger value";
+                } else {
+                    askType = "Find <b>Both</b> roots.";
+                    finalAns = [r1, r2]; // Array triggers special check
+                    placeholderText = "e.g. 2, 3";
+                }
+
                 return {
-                    answer: ans,
-                    desc: "Find the positive root.",
-                    display: `x² ${bVal > 0 ? '+' + bVal : bVal}x + ${cVal} = 0`,
+                    answer: finalAns,
+                    desc: `Solve for x. ${askType}`,
+                    display: `x² ${bVal}x + ${cVal} = 0`,
                     formula: "x = [-b ± √(b² - 4ac)] / 2a",
-                    steps: [`1. a=1, b=${bVal}, c=${cVal}`, `2. D = ${bVal*bVal - 4*cVal}`, `3. x = [${-bVal} ± √${bVal*bVal - 4*cVal}] / 2`, `4. x = <b>${ans}</b>`]
+                    placeholder: placeholderText,
+                    steps: [
+                        `1. a=1, b=${bVal}, c=${cVal}`, 
+                        `2. D = b²-4ac = ${bVal*bVal} - ${4*cVal} = ${bVal*bVal - 4*cVal}`, 
+                        `3. √D = ${Math.sqrt(bVal*bVal - 4*cVal)}`,
+                        `4. Roots = (${-bVal} ± ${Math.sqrt(bVal*bVal - 4*cVal)}) / 2`,
+                        `5. x = ${r1}, ${r2}`
+                    ]
                 };
             },
 
             // ================= CLASS 9 =================
             generateAnglesBisect: function() {
-                const mode = this.randInt(0, 2);
-                const a = this.randInt(50, 130);
+                const mode = Math.floor(Math.random() * 3);
+                const a = Math.floor(Math.random()*80)+50;
                 let ans, descStr, dispStr, formStr, stepArr, svgHTML;
 
                 if (mode === 0) {
@@ -481,8 +556,8 @@
             },
             
             generateCircles: function() {
-                const R = this.randInt(4, 7); 
-                const r = this.randInt(1, R - 2); 
+                const R = Math.floor(Math.random()*3)+4; 
+                const r = Math.floor(Math.random()*2)+1; 
                 const area = (Math.PI*(R*R - r*r)).toFixed(2);
                 return {
                     answer: area,
@@ -494,71 +569,37 @@
                 };
             },
 
-            // --- FIXED: Heron's Formula randomization ---
             generateHeron: function() {
-                // Generate a triple that forms a valid triangle (a + b > c)
-                // Use a factorable result for simpler user testing
-                // Simple (6, 8, 10) for area 24, s=12
-                const factor = this.randInt(1, 2); 
-                const a = 6 * factor;
-                const b = 8 * factor;
-                const c = 10 * factor;
-                const s = (a + b + c) / 2; // Semi-perimeter
-                const area = Math.sqrt(s * (s - a) * (s - b) * (s - c)); // Area is a whole number (24 * factor^2)
-                
-                // SVG for visual aid (still 3:4:5 ratio)
-                const svgW = 150; 
-                const svgH = 100;
-                const base = svgW - 40;
-                const height = svgH - 10;
-                
+                const s = [3,4,5,6];
                 return {
-                    answer: area,
-                    desc: "Calculate Triangle Area using Heron's Formula.",
-                    display: `Sides: ${a}, ${b}, ${c}`,
-                    formula: "Area = √s(s-a)(s-b)(s-c), where s = (a+b+c)/2",
-                    steps: [
-                        `1. Calculate semi-perimeter (s): s = (${a}+${b}+${c})/2 = <b>${s}</b>`, 
-                        `2. Calculate inner term: ${s}(${s}-${a})(${s}-${b})(${s}-${c}) = ${s} × ${(s-a)} × ${(s-b)} × ${(s-c)} = <b>${s * (s-a) * (s-b) * (s-c)}</b>`, 
-                        `3. Area = √${s * (s-a) * (s-b) * (s-c)}`, 
-                        `4. Area = <b>${area}</b>`
-                    ],
-                    svg: `<svg width="150" height="100"><polygon points="20,90 20,20 120,90" fill="#FFE66D" stroke="#333" stroke-width="2"/><text x="10" y="55">${b}</text><text x="70" y="98">${a}</text><text x="80" y="50">${c}</text></svg>`
+                    answer: 6,
+                    desc: "Calculate Triangle Area.",
+                    display: `Sides: 3, 4, 5`,
+                    formula: "Area = √s(s-a)(s-b)(s-c)",
+                    steps: [`1. s = (3+4+5)/2 = 6`, `2. Area = √6(6-3)(6-4)(6-5)`, `3. Area = √6(3)(2)(1) = √36`, `4. Area = <b>6</b>`],
+                    svg: `<svg width="150" height="100"><polygon points="20,90 20,20 120,90" fill="#FFE66D" stroke="#333" stroke-width="2"/><text x="10" y="55">3</text><text x="70" y="98">4</text><text x="80" y="50">5</text></svg>`
                 };
             },
 
-            // --- FIXED: Statistics randomization ---
             generateStats: function() {
-                const count = this.randInt(5, 7);
-                let nums = [];
-                let sum = 0;
-                for(let i=0; i<count; i++) {
-                    let num = this.randInt(1, 15);
-                    nums.push(num);
-                    sum += num;
-                }
-                const mean = (sum / count).toFixed(2);
-
+                const nums = [2, 4, 4, 5, 7, 8]; 
+                const sum = 30;
                 return {
-                    answer: mean,
+                    answer: 5,
                     desc: "Find the Mean of the dataset.",
-                    display: `Data: [ ${nums.join(', ')} ]`,
+                    display: `Data: [ 2, 4, 4, 5, 7, 8 ]`,
                     formula: "Mean = Sum / Count",
                     realWorld: "🌍 <b>Scenario:</b> Used to determine the average score of a class.",
-                    steps: [
-                        `1. Sum = ${sum}`, 
-                        `2. Count = ${count}`, 
-                        `3. ${sum} ÷ ${count} = <b>${mean}</b>`
-                    ]
+                    steps: [`1. Sum = ${sum}`, `2. Count = 6`, `3. ${sum} ÷ 6 = <b>5</b>`]
                 };
             },
 
             // ================= CLASS 10 =================
             
             generateAPTerm: function() {
-                const a = this.randInt(5, 10); 
-                const d = this.randInt(2, 4);  
-                const n = this.randInt(10, 15);  
+                const a = Math.floor(Math.random()*5)+5; 
+                const d = Math.floor(Math.random()*3)+2;  
+                const n = Math.floor(Math.random()*4)+10;  
                 const ans = a + (n-1)*d;
                 return {
                     answer: ans,
@@ -570,80 +611,61 @@
                 };
             },
 
-            // --- FIXED: AP Sum randomization for 'n' ---
             generateAPSum: function() {
-                const a = this.randInt(1, 5);
-                const d = this.randInt(2, 4);
-                const n = this.randInt(8, 15); // Random 'n'
+                const a = Math.floor(Math.random()*5)+1;
+                const d = Math.floor(Math.random()*3)+2;
+                const n = 10;
                 const ans = (n/2) * (2*a + (n-1)*d);
                 return {
                     answer: ans,
-                    desc: `Find the Sum of the first ${n} terms.`,
+                    desc: "Find the Sum of the first 10 terms.",
                     realWorld: `🌍 <b>Scenario (Summation):</b> You save $${a} in week 1, and increase savings by $${d} each week. How much total money after ${n} weeks?`,
                     display: `Series: ${a}, ${a+d}, ${a+2*d}... (n=${n})`,
                     formula: "S<sub>n</sub> = (n/2) × [2a + (n-1)d]",
-                    steps: [
-                        `1. n=${n}, a=${a}, d=${d}`, 
-                        `2. 2a = ${2*a}`, 
-                        `3. (n-1)d = ${n-1} × ${d} = ${(n-1)*d}`, 
-                        `4. Bracket Sum = ${2*a + (n-1)*d}`, 
-                        `5. ${n/2} × ${2*a + (n-1)*d} = <b>${ans}</b>`
-                    ]
+                    steps: [`1. n=${n}, a=${a}, d=${d}`, `2. 2a = ${2*a}`, `3. (n-1)d = 9 × ${d} = ${(n-1)*d}`, `4. Bracket Sum = ${2*a + (n-1)*d}`, `5. 5 × ${2*a + (n-1)*d} = <b>${ans}</b>`]
                 };
             },
 
-            // --- FIXED: GP Term randomization for a, r, n ---
             generateGPTerm: function() {
-                const a = this.randInt(2, 5); 
-                const r = this.randInt(2, 3); // Keep ratio small for manageable numbers
-                const n = this.randInt(4, 6); // Keep n small for manageable numbers
+                const a = Math.floor(Math.random()*5)+2; 
+                const r = 2; 
+                const n = 5; 
                 const ans = a * Math.pow(r, n-1); 
                 return {
                     answer: ans,
-                    desc: `Find the ${n}-th term of the Geometric Progression.`,
-                    realWorld: `🌍 <b>Scenario:</b> A bacteria culture starts with ${a}. It multiplies by ${r} every hour.`,
+                    desc: "Find the 5th term of the Geometric Progression.",
+                    realWorld: `🌍 <b>Scenario:</b> A bacteria culture starts with ${a}. It doubles (x2) every hour.`,
                     display: `a = ${a}, r = ${r}, n = ${n}`,
                     formula: "a<sub>n</sub> = a × r<sup>(n - 1)</sup>",
-                    steps: [
-                        `1. a=${a}, r=${r}, n=${n}`, 
-                        `2. r<sup>n-1</sup> = ${r}<sup>${n-1}</sup> = ${Math.pow(r, n-1)}`, 
-                        `3. ${a} × ${Math.pow(r, n-1)} = <b>${ans}</b>`
-                    ]
+                    steps: [`1. a=${a}, r=${r}, n=${n}`, `2. 2<sup>${n-1}</sup> = 16`, `3. ${a} × 16 = <b>${ans}</b>`]
                 };
             },
 
-            // --- FIXED: GP Sum randomization for a, r, n ---
             generateGPSum: function() {
-                const a = this.randInt(1, 3);
-                const r = this.randInt(2, 3); 
-                const n = this.randInt(4, 6);
+                const a = Math.floor(Math.random()*3)+1;
+                const r = 3; 
+                const n = 4;
                 const num = a * (Math.pow(r, n) - 1);
                 const den = r - 1;
                 const ans = num / den;
                 return {
                     answer: ans,
-                    desc: `Calculate the Total Sum of the first ${n} terms.`,
+                    desc: "Calculate the Total Sum (Viral Growth).",
                     realWorld: `🌍 <b>Scenario (Multiplication/Growth):</b> A post gets ${a} share. Each share gets ${r} reshares (Multiplication). What is the TOTAL shares after ${n} cycles?`,
                     display: `a = ${a}, r = ${r}, n = ${n}`,
                     formula: "S<sub>n</sub> = a(r<sup>n</sup> - 1) / (r - 1)",
-                    steps: [
-                        `1. r<sup>n</sup> = ${r}<sup>${n}</sup> = ${Math.pow(r,n)}`, 
-                        `2. Numerator: ${a} × (${Math.pow(r,n)} - 1) = ${a*(Math.pow(r,n)-1)}`, 
-                        `3. Denominator: ${r} - 1 = ${r-1}`,
-                        `4. ${a*(Math.pow(r,n)-1)} / ${r-1} = <b>${ans}</b>`
-                    ]
+                    steps: [`1. r<sup>n</sup> = ${Math.pow(r,n)}`, `2. ${Math.pow(r,n)} - 1 = ${Math.pow(r,n)-1}`, `3. × ${a} = ${a*(Math.pow(r,n)-1)}`, `4. / 2 = <b>${ans}</b>`]
                 };
             },
 
             // --- TRIGONOMETRY (BASIC) with SIN/COS/TAN ---
             generateTrig: function() {
-                // Toggle between Pythagoras (type 0) and Basic Ratios (type 1)
                 const type = Math.random() > 0.5 ? 0 : 1; 
                 const svgW = 160; const svgH = 120;
                 
                 if (type === 0) {
                     // PYTHAGORAS
-                    const scale = this.randInt(2, 4); 
+                    const scale = Math.floor(Math.random() * 3) + 2; 
                     const base = 4 * scale;
                     const height = 3 * scale;
                     const hyp = 5 * scale;
@@ -657,25 +679,17 @@
                         svg: `<svg width="200" height="180" viewBox="0 0 200 180"><path d="M40,160 L${40 + svgW},160 L40,${160 - svgH} Z" fill="#e0f7fa" stroke="#006064" stroke-width="3"/><rect x="40" y="${160-20}" width="20" height="20" fill="none" stroke="#006064" stroke-width="2"/><text x="30" y="${160 - svgH/2}" font-size="14" font-weight="bold" fill="#333" text-anchor="end">a=${height}</text><text x="${40 + svgW/2}" y="175" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">b=${base}</text><text x="${40 + svgW/2 + 10}" y="${160 - svgH/2 - 5}" font-size="14" font-weight="bold" fill="#d32f2f" text-anchor="start">c=?</text></svg>`
                     };
                 } else {
-                    // BASIC RATIOS (SIN/COS/TAN)
                     const angles = [30, 45, 60];
-                    const angle = angles[this.randInt(0, angles.length - 1)];
-                    let hyp, ans, funcName;
-                    
-                    // Case: Find Opposite given Hypotenuse (SIN)
-                    hyp = this.randInt(10, 20);
-                    let sinValue;
+                    const angle = angles[Math.floor(Math.random() * angles.length)];
+                    let hyp, ans;
+                    hyp = Math.floor(Math.random() * 10) + 10;
                     if(angle === 30) {
-                        sinValue = 0.5;
-                        ans = hyp * sinValue; 
+                        ans = hyp * 0.5;
                     } else if (angle === 45) {
-                        sinValue = 0.7071; // sin(45) approx
-                        ans = hyp * sinValue;
-                    } else { // 60
-                        sinValue = 0.8660; // sin(60) approx
-                        ans = hyp * sinValue;
+                        ans = (hyp * 0.707).toFixed(2);
+                    } else {
+                        ans = (hyp * 0.866).toFixed(2);
                     }
-                    ans = ans.toFixed(2);
                     
                     return {
                         answer: ans,
@@ -685,7 +699,7 @@
                         realWorld: "🌍 <b>Scenario:</b> Calculating height of a tree if you know distance and angle of elevation.",
                         steps: [
                             `1. Formula: Sin(${angle}) = x / ${hyp}`,
-                            `2. Value: Sin(${angle}°) ≈ ${sinValue.toFixed(4)}`,
+                            `2. Value: Sin(${angle}) ≈ ${angle==30?0.5:(angle==45?0.707:0.866)}`,
                             `3. x = ${hyp} × Sin(${angle})`,
                             `4. x = <b>${ans}</b>`
                         ],
@@ -696,42 +710,33 @@
 
             // --- TRIGONOMETRY (ADVANCED) ---
             generateTrigAdvanced: function() {
-                // Types: 0 = Find Angle, 1 = Area of Triangle
                 const type = Math.random() > 0.5 ? 0 : 1;
                 
                 if(type === 0) {
-                    // FIND ANGLE (Inverse Trig)
-                    const targetAngle = [30, 45, 60][this.randInt(0, 2)];
-                    let opp, hyp, ratio;
-                    
-                    if(targetAngle === 30) {
-                        hyp = 20; opp = 10; ratio = 0.5;
-                    } else if (targetAngle === 45) {
-                        hyp = 14.14; opp = 10; ratio = 0.707;
-                    } else { // 60
-                        hyp = 20; opp = 17.32; ratio = 0.866;
-                    }
+                    const targetAngle = [30, 45, 60][Math.floor(Math.random()*3)];
+                    let opp, hyp;
+                    if(targetAngle === 30) { hyp = 20; opp = 10; } 
+                    else if (targetAngle === 45) { hyp = 14.14; opp = 10; } 
+                    else { hyp = 20; opp = 17.32; }
 
                     return {
                         answer: targetAngle,
                         desc: "Find the Angle θ (in degrees).",
                         realWorld: "🌍 <b>Scenario:</b> Determining the angle of a ramp for wheelchair accessibility.",
-                        display: `Opposite = ${opp.toFixed(2)}, Hypotenuse = ${hyp.toFixed(2)}`,
+                        display: `Opposite = ${opp}, Hypotenuse = ${hyp}`,
                         formula: "Sin(θ) = Opp / Hyp → θ = Sin⁻¹(ratio)",
                         steps: [
-                            `1. Ratio = ${opp.toFixed(2)} / ${hyp.toFixed(2)} ≈ ${ratio.toFixed(3)}`,
-                            `2. Which angle has Sin ≈ ${ratio.toFixed(3)}?`,
-                            `3. (Ref: Sin30=0.5, Sin45≈0.707, Sin60≈0.866)`,
-                            `4. θ = <b>${targetAngle}</b>`
+                            `1. Ratio = ${opp} / ${hyp} ≈ ${(opp/hyp).toFixed(3)}`,
+                            `2. Which angle has Sin ≈ ${(opp/hyp).toFixed(3)}?`,
+                            `3. θ = <b>${targetAngle}</b>`
                         ],
-                        svg: `<svg width="200" height="180" viewBox="0 0 200 180"><path d="M40,160 L180,160 L180,60 Z" fill="#f3e5f5" stroke="#4a148c" stroke-width="3"/><path d="M40,160 L70,160 A30,30 0 0,0 65,145 Z" fill="#e1bee7"/><text x="80" y="155" font-size="14" font-weight="bold">θ?</text><text x="110" y="100" font-size="12">Hyp=${hyp.toFixed(2)}</text><text x="185" y="110" font-size="12">Opp=${opp.toFixed(2)}</text></svg>`
+                        svg: `<svg width="200" height="180" viewBox="0 0 200 180"><path d="M40,160 L180,160 L180,60 Z" fill="#f3e5f5" stroke="#4a148c" stroke-width="3"/><path d="M40,160 L70,160 A30,30 0 0,0 65,145 Z" fill="#e1bee7"/><text x="80" y="155" font-size="14" font-weight="bold">θ?</text><text x="110" y="100" font-size="12">Hyp=${hyp}</text><text x="185" y="110" font-size="12">Opp=${opp}</text></svg>`
                     };
 
                 } else {
-                    // AREA OF TRIANGLE (1/2 ab Sin C)
-                    const angle = 30; // Stick to 30 for easy math (Sin30 = 0.5)
-                    const a = this.randInt(5, 10) * 2; 
-                    const b = this.randInt(5, 10) * 2;
+                    const angle = 30; 
+                    const a = Math.floor(Math.random()*5 + 5) * 2; 
+                    const b = Math.floor(Math.random()*5 + 5) * 2;
                     const ans = 0.5 * a * b * 0.5;
 
                     return {
@@ -742,9 +747,7 @@
                         formula: "Area = ½ × a × b × Sin(θ)",
                         steps: [
                             `1. Formula: 0.5 × ${a} × ${b} × Sin(${angle})`,
-                            `2. Sin(30°) = 0.5`,
-                            `3. Calculation: 0.5 × ${a} × ${b} × 0.5`,
-                            `4. Area = <b>${ans}</b>`
+                            `2. Area = <b>${ans}</b>`
                         ],
                         svg: `<svg width="200" height="150" viewBox="0 0 200 150"><path d="M20,130 L180,130 L60,50 Z" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/><text x="100" y="145" font-size="12">Side A=${a}</text><text x="30" y="85" font-size="12">Side B=${b}</text><text x="50" y="115" font-size="12" fill="red">${angle}°</text></svg>`
                     };
@@ -752,18 +755,37 @@
             },
 
             generateQuadFormula10: function() {
-                const x1 = this.randInt(1, 5);
-                const x2 = this.randInt(1, 5); 
+                // Class 10 also supports dual answers
+                const x1 = Math.floor(Math.random() * 5) + 1;
+                const x2 = Math.floor(Math.random() * 5) + 2; 
                 const bVal = -(x1 + x2);
                 const cVal = x1 * x2;
-                const ans = Math.max(x1, x2);
+                
+                const mode = Math.random();
+                let askType, finalAns, placeholderText;
+
+                if (mode < 0.33) {
+                    askType = "Find the <b>Smaller</b> root.";
+                    finalAns = Math.min(x1, x2);
+                    placeholderText = "Smaller value";
+                } else if (mode < 0.66) {
+                    askType = "Find the <b>Larger</b> root.";
+                    finalAns = Math.max(x1, x2);
+                    placeholderText = "Larger value";
+                } else {
+                    askType = "Find <b>Both</b> roots.";
+                    finalAns = [x1, x2];
+                    placeholderText = "e.g. 3, 4";
+                }
+
                 return {
-                    answer: ans,
-                    desc: "Solve for x using the Quadratic Formula. (Find the larger root)",
+                    answer: finalAns,
+                    desc: `Solve for x. ${askType}`,
                     realWorld: "🌍 <b>Scenario:</b> Calculating the time it takes for a projectile to hit the ground.",
-                    display: `x² ${bVal > 0 ? '+' + bVal : bVal}x + ${cVal} = 0`,
+                    display: `x² ${bVal}x + ${cVal} = 0`,
                     formula: "x = [-b ± √(b² - 4ac)] / 2a",
-                    steps: [`1. a=1, b=${bVal}, c=${cVal}`, `2. D = ${bVal*bVal - 4*cVal}`, `3. x = [${-bVal} ± √${bVal*bVal - 4*cVal}] / 2`, `4. x = <b>${ans}</b>`]
+                    placeholder: placeholderText,
+                    steps: [`1. a=1, b=${bVal}, c=${cVal}`, `2. D = ${bVal*bVal - 4*cVal}`, `3. x = [${-bVal} ± √${bVal*bVal - 4*cVal}] / 2`, `4. x = ${x1}, ${x2}`]
                 }
             }
         };
