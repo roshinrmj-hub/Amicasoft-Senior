@@ -41,7 +41,7 @@
         /* --- CONTAINER --- */
         .main-container { max-width: 900px; margin: 0 auto; padding: 15px; text-align: center; }
         
-        /* CLASS NAV - Reduced Gap */
+        /* CLASS NAV */
         .class-nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
         .class-btn {
             background: #eee; border: none; padding: 8px 18px; border-radius: 25px;
@@ -51,7 +51,7 @@
         .class-btn:hover { background: #ddd; transform: translateY(-2px); }
         .class-btn.active { background: var(--dark); color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-        /* TOPIC NAV - Reduced Gap */
+        /* TOPIC NAV */
         .topic-nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
         .topic-btn {
             background: white; border: 2px solid var(--secondary); color: var(--secondary);
@@ -59,7 +59,7 @@
         }
         .topic-btn.active { background: var(--secondary); color: white; }
 
-        /* --- HEADLINE AREA - Minimal Gap --- */
+        /* --- HEADLINE AREA --- */
         .headline-area { margin-bottom: 10px; margin-top: -5px; animation: fadeIn 0.5s ease-out;}
         .problem-title { font-size: 1.8rem; color: var(--dark); margin: 0 0 5px 0; }
         .problem-desc { 
@@ -90,12 +90,15 @@
             display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;
         }
 
-        /* Fraction Style for Exponents */
+        /* Fraction & Exponent Alignment */
         .frac {
             display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 5px;
         }
         .frac-top { border-bottom: 3px solid #333; padding-bottom: 2px; width: 100%; text-align: center; }
         .frac-bot { padding-top: 2px; width: 100%; text-align: center; }
+        
+        /* Fix for exponent alignment in flex containers */
+        .exp-box { display: inline-block; vertical-align: middle; }
 
         .input-area { margin: 25px 0; display: flex; justify-content: center; gap: 10px; align-items: center;}
         
@@ -223,13 +226,13 @@
                     { id: 'c9_angles', name: 'Angles & Parallel Lines', handler: 'generateAnglesBisect' },
                     { id: 'c9_circles', name: 'Circle Areas', handler: 'generateCircles' },
                     { id: 'c9_heron', name: 'Heron\'s Formula', handler: 'generateHeron' },
-                    { id: 'c9_stats', name: 'Statistics', handler: 'generateStats' }
+                    { id: 'c9_stats', name: 'Statistics (Mean/Med/Mode)', handler: 'generateStats' }
                 ],
                 10: [
                     { id: 'c10_ap_term', name: 'AP Term (Find n)', handler: 'generateAPTerm' },
                     { id: 'c10_ap_sum', name: 'AP Sum (Total)', handler: 'generateAPSum' },
                     { id: 'c10_gp_term', name: 'GP Term', handler: 'generateGPTerm' },
-                    { id: 'c10_gp_sum', name: 'GP Sum (Multiplier)', handler: 'generateGPSum' },
+                    { id: 'c10_gp_sum', name: 'GP Sum (Total)', handler: 'generateGPSum' },
                     { id: 'c10_trig', name: 'Trigonometry (Basic)', handler: 'generateTrig' },
                     { id: 'c10_trig_adv', name: 'Trigonometry (Adv)', handler: 'generateTrigAdvanced' },
                     { id: 'c10_quad', name: 'Quadratic Eq', handler: 'generateQuadFormula10' }
@@ -240,8 +243,6 @@
                 this.currentClass = cls;
                 document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
                 event.target.classList.add('active');
-                
-                // --- TIGHT LAYOUT REMOVED (Applied Globally via CSS) ---
                 
                 const topicContainer = document.getElementById('topic-container');
                 topicContainer.innerHTML = '';
@@ -395,18 +396,19 @@
                 if (mode === 'mult') {
                     // Logic: Keep powers close (same level)
                     const m = Math.floor(Math.random() * 5) + 2; 
-                    const n = m + (Math.random() > 0.5 ? 1 : 0); // n is m or m+1
+                    const n = m + (Math.random() > 0.5 ? 1 : 0); 
                     const ans = m + n;
+                    // UPDATED: Wrapped in a span for alignment
                     return {
                         answer: ans,
                         desc: "Solve for x using the Product Rule.",
-                        display: `${base}<sup>${m}</sup> × ${base}<sup>${n}</sup> = ${base}<sup>x</sup>`,
+                        display: `<span class="exp-box">${base}<sup>${m}</sup> × ${base}<sup>${n}</sup> = ${base}<sup>x</sup></span>`,
                         formula: "a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup>",
                         steps: [`1. Base is ${base}.`, `2. Since we multiply same bases, ADD exponents.`, `3. ${m} + ${n} = ${ans}`, `4. x = <b>${ans}</b>`]
                     };
                 } else {
                     const n = Math.floor(Math.random() * 3) + 2;
-                    const m = n + Math.floor(Math.random() * 2) + 2; // m is slightly larger
+                    const m = n + Math.floor(Math.random() * 2) + 2; 
                     const ans = m - n;
                     return {
                         answer: ans,
@@ -425,7 +427,6 @@
                 const h = Math.floor(Math.random() * 6) + 3;
                 let ans, displayHTML, formulaStr, stepsArr, svgHTML, descStr, scenarioStr;
 
-                // Unique scenarios for each generation
                 const scCyl = [
                     `A cylindrical water tank has radius ${r}m and height ${h}m. How much water can it hold?`,
                     `A pillar is shaped like a cylinder with r=${r}m and h=${h}m. Find its concrete volume.`,
@@ -485,13 +486,12 @@
             },
 
             generateQuadFormula8: function() {
-                // Class 8 Intro to Quad - Randomly ask for solutions
                 const r1 = Math.floor(Math.random() * 5) + 1; 
-                const r2 = Math.floor(Math.random() * 5) + 2; // distinct
+                const r2 = Math.floor(Math.random() * 5) + 2; 
                 const bVal = -(r1 + r2);
                 const cVal = r1 * r2;
                 
-                const mode = Math.random(); // Randomly choose what to ask
+                const mode = Math.random();
                 let askType, finalAns, placeholderText;
 
                 if (mode < 0.33) {
@@ -504,7 +504,7 @@
                     placeholderText = "Larger value";
                 } else {
                     askType = "Find <b>Both</b> roots.";
-                    finalAns = [r1, r2]; // Array triggers special check
+                    finalAns = [r1, r2]; 
                     placeholderText = "e.g. 2, 3";
                 }
 
@@ -570,27 +570,86 @@
             },
 
             generateHeron: function() {
-                const s = [3,4,5,6];
+                const triples = [[3,4,5], [6,8,10], [5,12,13], [8,15,17], [7,24,25], [9,12,15]];
+                const sel = triples[Math.floor(Math.random() * triples.length)];
+                
+                const s = (sel[0] + sel[1] + sel[2]) / 2;
+                const area = Math.sqrt(s * (s-sel[0]) * (s-sel[1]) * (s-sel[2]));
+
                 return {
-                    answer: 6,
-                    desc: "Calculate Triangle Area.",
-                    display: `Sides: 3, 4, 5`,
+                    answer: area,
+                    desc: "Calculate Triangle Area using Heron's Formula.",
+                    display: `Sides: ${sel[0]}, ${sel[1]}, ${sel[2]}`,
                     formula: "Area = √s(s-a)(s-b)(s-c)",
-                    steps: [`1. s = (3+4+5)/2 = 6`, `2. Area = √6(6-3)(6-4)(6-5)`, `3. Area = √6(3)(2)(1) = √36`, `4. Area = <b>6</b>`],
-                    svg: `<svg width="150" height="100"><polygon points="20,90 20,20 120,90" fill="#FFE66D" stroke="#333" stroke-width="2"/><text x="10" y="55">3</text><text x="70" y="98">4</text><text x="80" y="50">5</text></svg>`
+                    steps: [
+                        `1. Semi-perimeter s = (${sel[0]}+${sel[1]}+${sel[2]})/2 = ${s}`, 
+                        `2. Area = √${s}(${s-sel[0]})(${s-sel[1]})(${s-sel[2]})`, 
+                        `3. Area = √${s* (s-sel[0]) * (s-sel[1]) * (s-sel[2])}`, 
+                        `4. Area = <b>${area}</b>`
+                    ],
+                    svg: `<svg width="150" height="100"><polygon points="20,90 20,20 120,90" fill="#FFE66D" stroke="#333" stroke-width="2"/><text x="10" y="55">${sel[0]}</text><text x="70" y="98">${sel[1]}</text><text x="80" y="50">${sel[2]}</text></svg>`
                 };
             },
 
+            // --- UPDATED STATISTICS: MEAN, MEDIAN, MODE ---
             generateStats: function() {
-                const nums = [2, 4, 4, 5, 7, 8]; 
-                const sum = 30;
+                const subType = ['mean', 'median', 'mode'][Math.floor(Math.random() * 3)];
+                const count = Math.floor(Math.random() * 2) + 5; // 5 to 6 numbers
+                let nums = [];
+                let ans, formulaStr, stepArr, descStr;
+
+                if (subType === 'mean') {
+                    // Force Integer Mean
+                    let sum = 0;
+                    for(let i=0; i<count-1; i++){
+                        let val = Math.floor(Math.random()*10)+1;
+                        nums.push(val); sum += val;
+                    }
+                    let remainder = sum % count;
+                    let lastVal = (remainder === 0) ? Math.floor(Math.random()*2)*count + count : (count - remainder) + count;
+                    nums.push(lastVal); sum += lastVal;
+                    ans = sum / count;
+                    descStr = "Find the <b>Mean</b> (Average).";
+                    formulaStr = "Mean = Sum / Count";
+                    stepArr = [`1. Sum = ${nums.join('+')} = ${sum}`, `2. Count = ${count}`, `3. ${sum} ÷ ${count} = <b>${ans}</b>`];
+
+                } else if (subType === 'median') {
+                    // Random numbers
+                    for(let i=0; i<count; i++) nums.push(Math.floor(Math.random()*15)+1);
+                    const sorted = [...nums].sort((a,b)=>a-b);
+                    const mid = Math.floor(sorted.length/2);
+                    
+                    if(sorted.length % 2 !== 0) {
+                        ans = sorted[mid];
+                        stepArr = [`1. Sort Data: ${sorted.join(', ')}`, `2. Find middle number.`, `3. Middle is <b>${ans}</b>`];
+                    } else {
+                        ans = (sorted[mid-1] + sorted[mid]) / 2;
+                        stepArr = [`1. Sort Data: ${sorted.join(', ')}`, `2. Find two middle numbers: ${sorted[mid-1]} and ${sorted[mid]}`, `3. Average them: <b>${ans}</b>`];
+                    }
+                    descStr = "Find the <b>Median</b> (Middle Value).";
+                    formulaStr = "Median = Middle Value (after sorting)";
+
+                } else {
+                    // Mode (Must have a repeat)
+                    for(let i=0; i<count-2; i++) nums.push(Math.floor(Math.random()*10)+1);
+                    const targetMode = nums[0]; // Make the first num the mode
+                    nums.push(targetMode); nums.push(targetMode); // Add it twice more
+                    // Shuffle slightly (simple swap)
+                    nums.sort(() => Math.random() - 0.5);
+                    
+                    ans = targetMode;
+                    descStr = "Find the <b>Mode</b> (Most Frequent).";
+                    formulaStr = "Mode = Most Frequent Number";
+                    stepArr = [`1. Look at the data: ${nums.join(', ')}`, `2. Count frequencies.`, `3. Number ${ans} appears most often.`];
+                }
+
                 return {
-                    answer: 5,
-                    desc: "Find the Mean of the dataset.",
-                    display: `Data: [ 2, 4, 4, 5, 7, 8 ]`,
-                    formula: "Mean = Sum / Count",
-                    realWorld: "🌍 <b>Scenario:</b> Used to determine the average score of a class.",
-                    steps: [`1. Sum = ${sum}`, `2. Count = 6`, `3. ${sum} ÷ 6 = <b>5</b>`]
+                    answer: ans,
+                    desc: descStr,
+                    display: `Data: [ ${nums.join(', ')} ]`,
+                    formula: formulaStr,
+                    realWorld: "🌍 <b>Scenario:</b> Statistics helps summarize large sets of data into single values.",
+                    steps: stepArr
                 };
             },
 
@@ -626,45 +685,65 @@
                 };
             },
 
+            // --- UPDATED GP TERM: DYNAMIC SCENARIOS ---
             generateGPTerm: function() {
+                // Randomize all variables
                 const a = Math.floor(Math.random()*5)+2; 
-                const r = 2; 
-                const n = 5; 
+                const r = Math.floor(Math.random()*2)+2; // 2 or 3
+                const n = Math.floor(Math.random()*3)+4; // 4 to 6
+                
+                const scenarios = [
+                    { text: `A Bacteria culture starts with ${a} cells. It multiplies by ${r} every hour. Count after ${n} hours?` },
+                    { text: `An investment starts at $${a}00. It grows ${r}x times every year. Value in year ${n}?` },
+                    { text: `A rumor starts with ${a} people. Each tells ${r} new people. How many new people hear it at step ${n}?` }
+                ];
+                const sc = scenarios[Math.floor(Math.random() * scenarios.length)];
+                
                 const ans = a * Math.pow(r, n-1); 
+
                 return {
                     answer: ans,
-                    desc: "Find the 5th term of the Geometric Progression.",
-                    realWorld: `🌍 <b>Scenario:</b> A bacteria culture starts with ${a}. It doubles (x2) every hour.`,
+                    desc: "Find the n-th term (Growth).",
+                    realWorld: `🌍 <b>Scenario:</b> ${sc.text}`,
                     display: `a = ${a}, r = ${r}, n = ${n}`,
                     formula: "a<sub>n</sub> = a × r<sup>(n - 1)</sup>",
-                    steps: [`1. a=${a}, r=${r}, n=${n}`, `2. 2<sup>${n-1}</sup> = 16`, `3. ${a} × 16 = <b>${ans}</b>`]
+                    steps: [`1. a=${a}, r=${r}, n=${n}`, `2. r^(n-1) = ${r}^${n-1} = ${Math.pow(r, n-1)}`, `3. ${a} × ${Math.pow(r, n-1)} = <b>${ans}</b>`]
                 };
             },
 
+            // --- UPDATED GP SUM: DYNAMIC SCENARIOS ---
             generateGPSum: function() {
                 const a = Math.floor(Math.random()*3)+1;
-                const r = 3; 
-                const n = 4;
+                const r = Math.floor(Math.random()*2)+2; // 2 or 3
+                const n = Math.floor(Math.random()*3)+3; // 3 to 5
+                
+                const scenarios = [
+                    { text: `A viral post gets ${a} share initially. Each share gets ${r} reshares. Total shares after ${n} rounds?` },
+                    { text: `A chain email is sent to ${a} people. Each sends to ${r} more. Total emails sent after ${n} waves?` },
+                    { text: `A tree trunk splits into ${r} branches, which split again. Start with ${a} trunks. Total branches after ${n} splits?` }
+                ];
+                const sc = scenarios[Math.floor(Math.random() * scenarios.length)];
+
                 const num = a * (Math.pow(r, n) - 1);
                 const den = r - 1;
                 const ans = num / den;
+                
                 return {
                     answer: ans,
                     desc: "Calculate the Total Sum (Viral Growth).",
-                    realWorld: `🌍 <b>Scenario (Multiplication/Growth):</b> A post gets ${a} share. Each share gets ${r} reshares (Multiplication). What is the TOTAL shares after ${n} cycles?`,
+                    realWorld: `🌍 <b>Scenario:</b> ${sc.text}`,
                     display: `a = ${a}, r = ${r}, n = ${n}`,
                     formula: "S<sub>n</sub> = a(r<sup>n</sup> - 1) / (r - 1)",
-                    steps: [`1. r<sup>n</sup> = ${Math.pow(r,n)}`, `2. ${Math.pow(r,n)} - 1 = ${Math.pow(r,n)-1}`, `3. × ${a} = ${a*(Math.pow(r,n)-1)}`, `4. / 2 = <b>${ans}</b>`]
+                    steps: [`1. r<sup>n</sup> = ${Math.pow(r,n)}`, `2. ${Math.pow(r,n)} - 1 = ${Math.pow(r,n)-1}`, `3. × ${a} = ${a*(Math.pow(r,n)-1)}`, `4. Divide by ${den} = <b>${ans}</b>`]
                 };
             },
 
-            // --- TRIGONOMETRY (BASIC) with SIN/COS/TAN ---
+            // --- TRIGONOMETRY (BASIC) ---
             generateTrig: function() {
                 const type = Math.random() > 0.5 ? 0 : 1; 
                 const svgW = 160; const svgH = 120;
                 
                 if (type === 0) {
-                    // PYTHAGORAS
                     const scale = Math.floor(Math.random() * 3) + 2; 
                     const base = 4 * scale;
                     const height = 3 * scale;
@@ -755,7 +834,6 @@
             },
 
             generateQuadFormula10: function() {
-                // Class 10 also supports dual answers
                 const x1 = Math.floor(Math.random() * 5) + 1;
                 const x2 = Math.floor(Math.random() * 5) + 2; 
                 const bVal = -(x1 + x2);
